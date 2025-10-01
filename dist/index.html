@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es" data-beasties-container>
+<head><base href="/Landing-Page-Nexus-Web/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Web</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "rxjs": "https://aistudiocdn.com/rxjs@^7.8.2?conditions=es2015",
+      "rxjs/operators": "https://aistudiocdn.com/rxjs@^7.8.2/operators?conditions=es2015",
+      "rxjs/ajax": "https://aistudiocdn.com/rxjs@^7.8.2/ajax?conditions=es2015",
+      "rxjs/webSocket": "https://aistudiocdn.com/rxjs@^7.8.2/webSocket?conditions=es2015",
+      "rxjs/testing": "https://aistudiocdn.com/rxjs@^7.8.2/testing?conditions=es2015",
+      "rxjs/fetch": "https://aistudiocdn.com/rxjs@^7.8.2/fetch?conditions=es2015",
+      "@angular/compiler": "https://next.esm.sh/@angular/compiler@^20.3.2?external=rxjs",
+      "@angular/common": "https://next.esm.sh/@angular/common@^20.3.2?external=rxjs",
+      "@angular/platform-browser": "https://next.esm.sh/@angular/platform-browser@^20.3.2?external=rxjs",
+      "@angular/core": "https://next.esm.sh/@angular/core@^20.3.2?external=rxjs"
+    }
+  }
+  </script>
+  <style>
+    body {
+      background-color: #0f172a; /* slate-900 */
+      color: #f8fafc; /* slate-50 */
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1e293b; /* slate-800 */
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #f85c37;
+      border-radius: 20px;
+      border: 3px solid #1e293b; /* slate-800 */
+    }
+
+    /* Orbit animation */
+    @keyframes orbit {
+      0% { transform: translate(120px, 0) rotate(0deg); }
+      100% { transform: translate(120px, 0) rotate(360deg); }
+    }
+    .animate-orbit {
+      transform-origin: -120px 0;
+      animation: orbit 10s linear infinite;
+    }
+    .animate-orbit-delay-1 { animation-delay: -3.33s; }
+    .animate-orbit-delay-2 { animation-delay: -6.67s; }
+
+    /* Cursor glow effect */
+    .cursor-glow {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(248, 92, 55, 0.2), transparent 50%);
+      filter: blur(50px);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    body:hover .cursor-glow {
+      opacity: 1;
+    }
+  </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased">
+  <app-root>Cargando Nexus Web...</app-root>
+<script src="main-LBXIDHPU.js" type="module"></script></body>
+</html>
