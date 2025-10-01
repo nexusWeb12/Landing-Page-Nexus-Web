@@ -1,0 +1,20 @@
+<div #cursorGlow class="cursor-glow"></div>
+<app-header [activeSection]="activeSection()" />
+<main class="pt-20">
+  <section id="home" #home class="relative">
+    <app-home />
+  </section>
+  <section id="projects" #projects class="py-20 sm:py-32">
+    <app-projects />
+  </section>
+  <section id="services" #services class="py-20 sm:py-32">
+    <app-services />
+  </section>
+  <section id="process" #process class="py-20 sm:py-32">
+    <app-production-path />
+  </section>
+  <section id="contact" #contact class="py-20 sm:py-32">
+    <app-contact />
+  </section>
+</main>
+<app-footer />

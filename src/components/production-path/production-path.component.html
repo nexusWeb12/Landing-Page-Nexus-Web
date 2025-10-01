@@ -1,0 +1,46 @@
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ruta de Producción de tu proyecto</h2>
+      <p class="mt-4 text-lg text-slate-300">
+        Seguimos un proceso estructurado y transparente para garantizar la calidad y el éxito de cada proyecto.
+      </p>
+    </div>
+
+    <div class="relative">
+      <!-- Desktop SVG Path -->
+      <div class="hidden lg:block absolute top-10 left-0 w-full h-full" aria-hidden="true">
+          <svg class="w-full h-auto" width="934" height="266" viewBox="0 0 934 266" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1C21.6667 38.6667 76.2 124 152 124C227.8 124 278.5 38.6667 309 1C339.5 -36.6667 387 124 465.5 124C544 124 590 -36.6667 622 1C654 38.6667 706.8 124 781 124C855.2 124 912.333 38.6667 933 1" stroke="url(#paint0_linear_2_108)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"/>
+              <defs>
+                  <linearGradient id="paint0_linear_2_108" x1="1" y1="1" x2="933" y2="1" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#f85c37"/>
+                      <stop offset="0.5" stop-color="#ff8250"/>
+                      <stop offset="1" stop-color="#577596"/>
+                  </linearGradient>
+              </defs>
+          </svg>
+      </div>
+      <!-- Mobile vertical line -->
+      <div class="absolute left-8 w-0.5 h-full bg-gradient-to-b from-[#f85c37] via-[#ff8250] to-[#577596] lg:hidden"></div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
+        @for (phase of phases; track phase.name; let i = $index) {
+          <div class="flex flex-col gap-12">
+            @for (step of phase.steps; track step.name; let j = $index) {
+              @let stepIndex = i * 2 + j;
+              <div class="relative pl-16">
+                <div [class]="'absolute top-0 left-8 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center font-bold text-slate-900 ' + phase.color.replace('text', 'bg')">
+                  {{ stepIndex + 1 }}
+                </div>
+                <div class="lg:text-center">
+                  <h3 [class]="'text-lg font-semibold ' + phase.color">{{ step.name }}</h3>
+                  <p class="mt-1 text-slate-400">{{ step.description }}</p>
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+
+  </div>
